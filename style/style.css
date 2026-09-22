@@ -1,0 +1,158 @@
+/* =========================================================
+   CV — Esteban de Jesús Santiago Torres
+   Hoja de estilos independiente del index.html
+   ========================================================= */
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Subrayado animado bajo los títulos de sección */
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 44px;
+  height: 3.5px;
+  background: #2563eb;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+.group-section:hover .section-title::after {
+  width: 72px;
+}
+
+/* Iconos SVG inline (no son texto, así que no ensucian el copiar/pegar) */
+.icon {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+/* Chips de habilidades técnicas */
+.skill-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.9rem 1rem;
+  border-radius: 1rem;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.skill-chip:hover {
+  box-shadow: 0 8px 20px -8px rgba(37, 99, 235, 0.25);
+  border-color: #93c5fd;
+  transform: translateY(-2px);
+}
+.skill-chip span {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* Tarjetas de proyecto */
+.project-card {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-left: 4px solid #2563eb;
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.project-card:hover {
+  box-shadow: 0 20px 25px -10px rgba(15, 23, 42, 0.12);
+  transform: translateY(-3px);
+}
+
+/* Tarjetas informativas genéricas (educación, experiencia) */
+.info-card {
+  padding: 1.25rem 1.5rem;
+  border-radius: 1rem;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Botones y enlaces de contacto */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.btn-primary {
+  color: #ffffff;
+  background: #2563eb;
+  box-shadow: 0 6px 16px -4px rgba(37, 99, 235, 0.4);
+}
+.btn-primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+.btn-secondary {
+  color: #334155;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+.btn-secondary:hover {
+  background: #f8fafc;
+  transform: translateY(-1px);
+}
+.contact-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 0.6rem;
+  background: #f8fafc;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  color: #475569;
+  transition: all 0.2s ease;
+}
+.contact-pill:hover {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+
+/* Impresión: ocultar controles que no aportan al PDF y quitar sombras */
+@media print {
+  body {
+    background: #ffffff !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .shadow-floating,
+  .shadow-card {
+    box-shadow: none !important;
+  }
+}

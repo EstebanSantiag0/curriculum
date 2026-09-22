@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Esteban de Jesús Santiago Torres | CV & Portafolio</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'sans-serif'],
+          mono: ['JetBrains Mono', 'monospace'],
+        },
+        colors: {
+          brand: {
+            50: '#eff6ff',
+            100: '#dbeafe',
+            500: '#3b82f6',
+            600: '#2563eb',
+            700: '#1d4ed8',
+            800: '#1e40af',
+          }
+        },
+        boxShadow: {
+          'card': '0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 20px 25px -5px rgba(0, 0, 0, 0.02)',
+          'floating': '0 25px 50px -12px rgba(15, 23, 42, 0.09)',
+        }
+      }
+    }
+  }
+</script>
+<link href="style/style.css" rel="stylesheet"/>
+</head>
+<body class="bg-[#f0f3f8] text-slate-800 font-sans antialiased min-h-screen py-6 sm:py-12 px-4 sm:px-6 lg:px-8 selection:bg-blue-100 selection:text-blue-900">
+
+<!-- Barra superior de acciones (no se imprime) -->
+<aside aria-label="Acciones de documento" class="no-print max-w-5xl mx-auto mb-5 flex items-center justify-between px-3">
+  <div class="flex items-center gap-2 text-xs font-mono text-slate-500 bg-white/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-slate-200/80 shadow-sm">
+    <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+    <span>cv_esteban_santiago_torres.pdf</span>
+  </div>
+  <div class="flex items-center gap-2">
+    <button class="btn btn-secondary px-4 py-1.5 text-xs sm:text-sm shadow-sm" onclick="window.print()" title="Imprimir o guardar como PDF" type="button">
+      <svg class="icon w-[18px] h-[18px] text-slate-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/>
+      </svg>
+      <span class="hidden sm:inline">Imprimir</span>
+    </button>
+    <a class="btn btn-primary px-4 py-1.5 text-xs sm:text-sm" href="mailto:esstebansantiag0@gmail.com?subject=Contacto%20-%20Esteban%20Santiago%20Torres">
+      <svg class="icon w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/>
+      </svg>
+      <span>Contactar</span>
+    </a>
+  </div>
+</aside>
+
+<!-- Contenedor principal del documento -->
+<div class="max-w-5xl mx-auto bg-white rounded-3xl sm:rounded-[32px] shadow-floating border border-slate-200/70 p-7 sm:p-12 lg:p-14 transition-all duration-300">
+
+  <!-- ENCABEZADO -->
+  <header class="flex flex-col md:flex-row items-center md:items-start gap-7 sm:gap-10 pb-10 border-b border-slate-100">
+    <div class="relative group shrink-0">
+      <div class="w-36 h-36 sm:w-40 sm:h-40 rounded-full p-1 bg-gradient-to-tr from-blue-600 via-sky-400 to-indigo-500 shadow-lg shadow-blue-500/20 flex items-center justify-center">
+        <div class="w-full h-full rounded-full overflow-hidden bg-slate-50 ring-4 ring-white flex items-center justify-center">
+          <img src="img/profile.jpg" alt="Esteban de Jesús Santiago Torres" class="w-full h-full object-cover object-center"/>
+        </div>
+      </div>
+      <span class="absolute bottom-1 right-2 inline-flex items-center justify-center p-1.5 bg-emerald-500 text-white rounded-full ring-4 ring-white shadow-sm" title="Disponible para prácticas profesionales">
+        <svg class="icon w-[14px] h-[14px]" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+      </span>
+    </div>
+
+    <div class="flex flex-col items-center md:items-start text-center md:text-left flex-grow">
+      <div class="flex flex-wrap items-center justify-center md:justify-start gap-2.5 mb-1.5">
+        <h1 class="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-slate-900 tracking-tight leading-none">Esteban de Jesús Santiago Torres</h1>
+        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200/60">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          Disponible
+        </span>
+      </div>
+      <h2 class="text-base sm:text-lg lg:text-xl font-semibold text-blue-600 mb-2">20 años · Estudiante de Ingeniería en Computación (5.º semestre) · Firmware, Software y Sistemas Embebidos</h2>
+      <p class="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl font-normal mb-5">
+        Busco prácticas profesionales en firmware, desarrollo de software, sistemas embebidos y arquitectura de computadoras. Trabajo a bajo nivel en C, C++, Python y VHDL, con experiencia en diseño de lógica digital sobre FPGAs, administración de entornos Linux y desarrollo de aplicaciones multiplataforma.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center md:justify-start gap-2 sm:gap-3 text-xs sm:text-sm text-slate-600">
+        <a class="contact-pill" href="mailto:esstebansantiag0@gmail.com">
+          <svg class="icon w-[17px] h-[17px] text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+          <span>esstebansantiag0@gmail.com</span>
+        </a>
+        <a class="contact-pill" href="tel:+529531957537">
+          <svg class="icon w-[17px] h-[17px] text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg>
+          <span>953 195 7537</span>
+        </a>
+        <a class="contact-pill" href="https://github.com/EstebanSantiag0" rel="noopener noreferrer" target="_blank">
+          <svg class="icon w-4 h-4 fill-current text-slate-700" viewBox="0 0 24 24" aria-hidden="true">
+            <path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"/>
+          </svg>
+          <span class="font-mono text-xs">EstebanSantiag0</span>
+        </a>
+        <span class="contact-pill">
+          <svg class="icon w-[17px] h-[17px] text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Huajuapan de León, Oaxaca, México — abierto a trabajo remoto o reubicación</span>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="mt-10 flex flex-col gap-11">
+
+    <!-- 1. PERFIL PROFESIONAL -->
+    <section class="group-section">
+      <h3 class="section-title text-xl font-bold text-slate-900 mb-4 tracking-tight">Perfil Profesional</h3>
+      <p class="text-slate-700 text-sm sm:text-base leading-relaxed mt-2 text-justify">
+        Estudiante de 5.º semestre de Ingeniería en Computación con un perfil técnico integral orientado al desarrollo de sistemas a bajo nivel, arquitectura de software, compiladores y sistemas embebidos/FPGA, complementado con experiencia en el desarrollo de aplicaciones multiplataforma modernas. Poseo sólidos conocimientos en la implementación de algoritmos en C, C++, Python y VHDL, diseño de lógica digital sobre FPGAs de la familia Xilinx Spartan-3E mediante Xilinx ISE, y administración de entornos Linux (Arch Linux, Debian) y bases de datos relacionales y NoSQL (PostgreSQL, MongoDB). Cuento con una sólida capacidad de liderazgo en equipos de trabajo técnico, coordinando la asignación de tareas bajo un estricto enfoque en la calidad del código.
+      </p>
+      <p class="text-slate-700 text-sm sm:text-base leading-relaxed mt-3 text-justify">
+        Además, integro una visión de negocio práctica fundamentada en la gestión de logística y contratación de personal en emprendimientos propios, sumado a una destacada fluidez comunicativa, trabajo bajo presión y expresión pública desarrolladas tras varios años de formación actoral en escuelas asociadas al INBAL. Nivel de inglés profesional con comprensión auditiva y lectora completa.
+      </p>
+    </section>
+
+    <!-- 2. HABILIDADES TÉCNICAS -->
+    <section class="group-section">
+      <h3 class="section-title text-xl font-bold text-slate-900 mb-5 tracking-tight">Habilidades Técnicas</h3>
+
+      <div class="mt-2">
+        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2.5">Lenguajes de programación y lógica</h4>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3.5 sm:gap-4">
+          <div class="skill-chip"><span>C, C++</span></div>
+          <div class="skill-chip"><span>Python</span></div>
+          <div class="skill-chip"><span>Java</span></div>
+          <div class="skill-chip"><span>Dart (Flutter)</span></div>
+          <div class="skill-chip"><span>VHDL</span></div>
+          <div class="skill-chip"><span>Ensamblador x86-64</span></div>
+          <div class="skill-chip"><span>Flutter / PyQt6</span></div>
+          <div class="skill-chip"><span>PostgreSQL / MongoDB</span></div>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2.5">Sistemas y hardware</h4>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3.5 sm:gap-4">
+          <div class="skill-chip"><span>Linux (Arch, Debian)</span></div>
+          <div class="skill-chip"><span>FPGA Xilinx Spartan-3E</span></div>
+          <div class="skill-chip"><span>Xilinx ISE 14.7</span></div>
+          <div class="skill-chip"><span>Digilent Nexys 2</span></div>
+          <div class="skill-chip"><span>Microcontroladores ESP32</span></div>
+          <div class="skill-chip"><span>Control de vídeo VGA</span></div>
+          <div class="skill-chip"><span>Comunicación serial</span></div>
+          <div class="skill-chip"><span>Sensores ambientales / humedad</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PROYECTOS DESTACADOS -->
+    <section class="group-section">
+      <h3 class="section-title text-xl font-bold text-slate-900 mb-5 tracking-tight">Proyectos Técnicos Destacados</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mt-2">
+
+        <article class="project-card">
+          <div>
+            <h4 class="text-base sm:text-lg font-bold text-slate-900 tracking-tight mb-1">Transpilador de Java a Python con Interfaz Gráfica</h4>
+            <div class="text-xs sm:text-[13px] font-semibold text-blue-600 mb-3">Tecnologías: Python, PyQt6, análisis léxico y sintáctico</div>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Herramienta de transpilación que procesa sintaxis de Java y la traduce a código ejecutable en Python, con una interfaz de usuario modular para visualizar código y errores en tiempo real.
+            </p>
+          </div>
+          <div class="pt-3 mt-4 border-t border-slate-100 flex items-center justify-end">
+            <a class="btn btn-secondary px-3 py-1.5 text-xs" href="https://github.com/EstebanSantiag0" rel="noopener noreferrer" target="_blank">
+              <svg class="icon w-[15px] h-[15px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <span>Ver perfil de GitHub</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div>
+            <h4 class="text-base sm:text-lg font-bold text-slate-900 tracking-tight mb-1">App multiplataforma para gestión comercial (cafetería)</h4>
+            <div class="text-xs sm:text-[13px] font-semibold text-blue-600 mb-3">Tecnologías: Dart, Flutter</div>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Solución de software privada para optimizar la toma de pedidos, el flujo de ventas y la atención al cliente en un establecimiento comercial.
+            </p>
+          </div>
+          <div class="pt-3 mt-4 border-t border-slate-100 flex items-center justify-end">
+            <a class="btn btn-secondary px-3 py-1.5 text-xs" href="https://github.com/EstebanSantiag0" rel="noopener noreferrer" target="_blank">
+              <svg class="icon w-[15px] h-[15px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <span>Ver perfil de GitHub</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div>
+            <h4 class="text-base sm:text-lg font-bold text-slate-900 tracking-tight mb-1">Videojuego de la víbora (Snake) sobre FPGA vía VGA</h4>
+            <div class="text-xs sm:text-[13px] font-semibold text-blue-600 mb-3">Tecnologías: VHDL, Xilinx ISE 14.7, Digilent Nexys 2 (Spartan-3E 500k puertas)</div>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Sistema digital autónomo implementado desde cero en VHDL para renderizar el juego clásico de la víbora en pantalla mediante controlador VGA, gestionando memoria de vídeo, entradas de usuario y detección de colisiones por hardware.
+            </p>
+          </div>
+          <div class="pt-3 mt-4 border-t border-slate-100 flex items-center justify-end">
+            <a class="btn btn-secondary px-3 py-1.5 text-xs" href="https://github.com/EstebanSantiag0" rel="noopener noreferrer" target="_blank">
+              <svg class="icon w-[15px] h-[15px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <span>Ver perfil de GitHub</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div>
+            <h4 class="text-base sm:text-lg font-bold text-slate-900 tracking-tight mb-1">Máquina de Turing con interfaz interactiva</h4>
+            <div class="text-xs sm:text-[13px] font-semibold text-blue-600 mb-3">Tecnologías: Python, PyQt6</div>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Simulador visual de máquinas de Turing que permite configurar cintas, estados y reglas de transición de manera interactiva.
+            </p>
+          </div>
+          <div class="pt-3 mt-4 border-t border-slate-100 flex items-center justify-end">
+            <a class="btn btn-secondary px-3 py-1.5 text-xs" href="https://github.com/EstebanSantiag0" rel="noopener noreferrer" target="_blank">
+              <svg class="icon w-[15px] h-[15px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <span>Ver perfil de GitHub</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div>
+            <h4 class="text-base sm:text-lg font-bold text-slate-900 tracking-tight mb-1">Prototipo de maceta inteligente con IoT</h4>
+            <div class="text-xs sm:text-[13px] font-semibold text-blue-600 mb-3">Tecnologías: ESP32, C/C++, sensores de humedad y variables ambientales</div>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Sistema de monitoreo de humedad de suelo y automatización de riego basado en el SoC ESP32, orientado al cuidado botánico. Proyecto personal.
+            </p>
+          </div>
+          <div class="pt-3 mt-4 border-t border-slate-100 flex items-center justify-end">
+            <a class="btn btn-secondary px-3 py-1.5 text-xs" href="https://github.com/EstebanSantiag0" rel="noopener noreferrer" target="_blank">
+              <svg class="icon w-[15px] h-[15px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <span>Ver perfil de GitHub</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div>
+            <h4 class="text-base sm:text-lg font-bold text-slate-900 tracking-tight mb-1">Buscaminas en C</h4>
+            <div class="text-xs sm:text-[13px] font-semibold text-blue-600 mb-3">Tecnologías: C (biblioteca estándar)</div>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Implementación en C puro del juego Buscaminas, con estructuras de datos bidimensionales y lógica de recursión para revelar casillas.
+            </p>
+          </div>
+          <div class="pt-3 mt-4 border-t border-slate-100 flex items-center justify-end">
+            <a class="btn btn-secondary px-3 py-1.5 text-xs" href="https://github.com/EstebanSantiag0" rel="noopener noreferrer" target="_blank">
+              <svg class="icon w-[15px] h-[15px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <span>Ver perfil de GitHub</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 4. EXPERIENCIA LABORAL Y LIDERAZGO -->
+    <section class="group-section">
+      <h3 class="section-title text-xl font-bold text-slate-900 mb-5 tracking-tight">Experiencia Laboral y Liderazgo en Proyectos</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 mt-2">
+
+        <div class="info-card">
+          <div>
+            <span class="text-xs font-mono font-semibold text-blue-600 bg-blue-50 px-2.5 py-0.5 rounded-full inline-block mb-2">Líder de equipo</span>
+            <h4 class="text-base font-bold text-slate-900">Liderazgo en proyectos académicos de ingeniería</h4>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mt-2">
+              Rol: Líder de equipo y arquitecto de software. Delegación de tareas, revisión rigurosa de código (code review), establecimiento de estándares de calidad y resolución de bloqueos técnicos en equipos de desarrollo universitarios.
+            </p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div>
+            <span class="text-xs font-mono font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full inline-block mb-2">Emprendimiento</span>
+            <h4 class="text-base font-bold text-slate-900">Gestión de punto de venta y operación</h4>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mt-2">
+              Rol: Dueño y administrador operativo. Planificación de logística, contratación directa de personal eventual, gestión de flujo de caja y ventas directas al público durante eventos de alta demanda.
+            </p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div>
+            <span class="text-xs font-mono font-semibold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-full inline-block mb-2">Atención al cliente</span>
+            <h4 class="text-base font-bold text-slate-900">Logística y servicios</h4>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mt-2">
+              Experiencia como repartidor y mesero. Orientación al cliente, trabajo dinámico bajo alta presión, resolución rápida de eventualidades y comunicación interpersonal directa.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. EDUCACIÓN Y FORMACIÓN CULTURAL -->
+    <section class="group-section">
+      <h3 class="section-title text-xl font-bold text-slate-900 mb-5 tracking-tight">Educación y Formación Cultural</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mt-2">
+
+        <div class="info-card">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-1.5">
+              <span class="text-xs font-mono font-semibold text-blue-600 bg-blue-50 px-2.5 py-0.5 rounded-full">5.º Semestre · En curso</span>
+            </div>
+            <h4 class="text-base font-bold text-slate-900">Ingeniería en Computación</h4>
+            <p class="text-xs sm:text-sm text-slate-500 mb-3 font-medium">Enfoque en Arquitectura de Computadoras, Estructuras de Datos, Compiladores, Sistemas Operativos y Programación Orientada a Objetos</p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-1.5">
+              <span class="text-xs font-mono font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full">6 semestres completados</span>
+            </div>
+            <h4 class="text-base font-bold text-slate-900">Formación en Artes Escénicas (Teatro)</h4>
+            <p class="text-xs sm:text-sm text-slate-500 mb-3 font-medium">Escuela de Iniciación Artística asociada al INBAL, Huajuapan de León — Actor en la compañía "Metamorfosis Teatro"</p>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Habilidades desarrolladas: dominio del escenario, dicción, oratoria, trabajo en equipo bajo presión, empatía y adaptabilidad en la comunicación.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. IDIOMAS -->
+    <section class="group-section">
+      <h3 class="section-title text-xl font-bold text-slate-900 mb-5 tracking-tight">Idiomas</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-2">
+        <div class="info-card">
+          <div class="flex items-center justify-between text-sm">
+            <span class="font-semibold text-slate-800">Español</span>
+            <span class="text-slate-500 font-mono text-xs">Nativo</span>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="flex items-center justify-between text-sm">
+            <span class="font-semibold text-slate-800">Inglés</span>
+            <span class="text-blue-600 font-mono text-xs font-bold">Avanzado (C1)</span>
+          </div>
+          <p class="text-xs text-slate-500 mt-2">Alta comprensión auditiva y lectora; capacidad para sostener entrevistas técnicas y profesionales.</p>
+        </div>
+        <div class="info-card">
+          <div class="flex items-center justify-between text-sm">
+            <span class="font-semibold text-slate-800">Ruso y chino</span>
+            <span class="text-slate-500 font-mono text-xs">Elemental</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA Y CONTACTO DIRECTO -->
+  <footer class="mt-12 pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs sm:text-sm text-slate-600">
+    <div class="space-y-1.5">
+      <p class="font-medium text-slate-700">Email: <a class="text-blue-600 hover:underline font-mono" href="mailto:esstebansantiag0@gmail.com">esstebansantiag0@gmail.com</a></p>
+      <p class="font-medium text-slate-700">Teléfono: <a class="text-blue-600 hover:underline font-mono" href="tel:+529531957537">953 195 7537</a></p>
+      <p class="font-medium text-slate-700">GitHub: <a class="text-blue-600 hover:underline font-mono" href="https://github.com/EstebanSantiag0" rel="noopener noreferrer" target="_blank">github.com/EstebanSantiag0</a></p>
+      <p class="font-medium text-slate-700">Ubicación: Huajuapan de León, Oaxaca, México — disponible para trabajo en línea o reubicación</p>
+    </div>
+    <div class="flex items-center gap-2.5 self-stretch sm:self-auto justify-end">
+      <button class="btn btn-secondary flex-1 sm:flex-initial justify-center px-4 py-2 text-xs" onclick="window.print()" type="button">
+        <svg class="icon w-[16px] h-[16px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span>Descargar como PDF</span>
+      </button>
+    </div>
+  </footer>
+</div>
+
+<p class="text-center text-xs text-slate-400 mt-6 font-mono no-print">© 2026 Esteban de Jesús Santiago Torres</p>
+
+</body>
+</html>
