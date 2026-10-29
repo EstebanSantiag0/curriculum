@@ -1,0 +1,166 @@
+% =========================================================
+%  CV — Esteban de Jesús Santiago Torres
+%  Versión imprimible de https://estebansantiag0.github.io/curriculum/
+%  Compilar:  pdflatex cv_esteban_santiago_torres.tex
+% =========================================================
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[sfdefault]{roboto}
+\usepackage[margin=1.6cm,top=1.4cm,bottom=1.4cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+
+% Colores de la página web
+\definecolor{brand}{HTML}{2563EB}
+\definecolor{ink}{HTML}{0F172A}
+\definecolor{body}{HTML}{334155}
+\definecolor{muted}{HTML}{64748B}
+\definecolor{rule}{HTML}{E2E8F0}
+
+\hypersetup{pdftitle={CV — Esteban de Jesús Santiago Torres},
+            pdfauthor={Esteban de Jesús Santiago Torres}}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\color{body}
+
+% Títulos de sección con la barra azul de la web
+\titleformat{\section}
+  {\color{ink}\large\bfseries}
+  {}{0pt}{}
+  [\vspace{2pt}{\color{brand}\rule{30pt}{2.2pt}}]
+\titlespacing*{\section}{0pt}{11pt}{6pt}
+
+\setlist[itemize]{leftmargin=1.1em, itemsep=1.5pt, topsep=2pt, parsep=0pt, label={\color{brand}\textbullet}}
+
+% \entry{título}{fecha}{subtítulo}
+\newcommand{\entry}[3]{%
+  {\color{ink}\bfseries #1}\hfill{\small\color{brand}\bfseries #2}\par
+  \ifx&#3&\else{\small\color{muted}#3}\par\fi
+  \vspace{2pt}}
+
+% \project{nombre}{tecnologías}{enlace}{texto} — en una minipage para que no se parta entre páginas
+\newcommand{\project}[4]{%
+  \begin{minipage}{\textwidth}
+  {\color{ink}\bfseries #1}\hfill{\small\href{https://#3}{\color{brand}\faGithub\ #3}}\par
+  {\small\color{brand}#2}\par
+  \vspace{1pt}{\small #4}\par
+  \end{minipage}\par\vspace{6pt}}
+
+\newcommand{\contact}[2]{\mbox{{\color{brand}#1}\ #2}}
+
+\begin{document}
+
+% ---------- Encabezado ----------
+\begin{minipage}[c]{2.7cm}
+  \begin{tikzpicture}
+    \clip (0,0) circle (1.25cm);
+    \node at (0,0) {\includegraphics[width=2.5cm]{foto.jpg}};
+  \end{tikzpicture}
+\end{minipage}%
+\hspace{0.4cm}%
+\begin{minipage}[c]{\dimexpr\textwidth-3.1cm}
+  {\color{ink}\fontsize{22}{24}\selectfont\bfseries Esteban de Jesús Santiago Torres}\par
+  \vspace{4pt}
+  {\color{brand}\bfseries Desarrollo de Software · Estudiante de Ingeniería en Computación}\par
+  \vspace{2pt}
+  {\small Universidad Tecnológica de la Mixteca (UTM) · 5.º semestre · Promedio 9.0}\par
+  \vspace{5pt}
+  {\small
+  \contact{\faEnvelope[regular]}{\href{mailto:esstebansantiag0@gmail.com}{esstebansantiag0@gmail.com}}\quad
+  \contact{\faPhone}{\href{tel:+529531957537}{953 195 7537}}\quad
+  \contact{\faGithub}{\href{https://github.com/EstebanSantiag0}{github.com/EstebanSantiag0}}\par
+  \vspace{2pt}
+  \contact{\faLinkedin}{\href{https://www.linkedin.com/in/esteban-de-jes\%C3\%BAs-santiago-torres-8b5aab447/}{LinkedIn}}\quad
+  \contact{\faGlobe}{\href{https://estebansantiag0.github.io/curriculum/}{estebansantiag0.github.io/curriculum}}\quad
+  \contact{\faMapMarker*}{Huajuapan de León, Oaxaca · remoto o reubicación}}
+\end{minipage}
+
+% ---------- Perfil ----------
+\section{Perfil Profesional}
+Busco estancias profesionales en desarrollo de software para el verano de 2027, al concluir el 6.º semestre.
+Desarrollo de forma freelance un sistema de punto de venta en Flutter (Android, Windows y Linux) y hago
+aplicaciones de escritorio en Python (PyQt6) sobre PostgreSQL y Docker, además de programas en C/C++.
+Como complemento, diseño hardware digital en VHDL sobre FPGA, incluido un procesador RISC-V de un solo
+ciclo hecho desde cero. Seis semestres de teatro (INBAL) me dieron soltura para hablar en público.
+
+% ---------- Habilidades ----------
+\section{Habilidades Técnicas}
+\begin{tabular}{@{}l@{\hspace{10pt}}p{\dimexpr\textwidth-3.7cm}@{}}
+  {\color{ink}\bfseries Software} & Python · PyQt6, C / C++, Java, Dart · Flutter, SQL · PostgreSQL, MongoDB, Docker, Claude Code (IA) \\[2pt]
+  {\color{ink}\bfseries Sistemas y hardware} & Linux (Arch, Debian), Git · GitHub, VHDL, ensamblador x86-64, FPGA Spartan-3E (Nexys 2), Xilinx ISE 14.7, ESP32, Blender \\
+\end{tabular}
+
+% ---------- Experiencia ----------
+\section{Experiencia Laboral}
+
+\entry{Desarrollador Flutter — Boopi POS}{Freelance · 2026 – presente}{}
+{\small Sistema de punto de venta para una cafetería, para Android, Windows y Linux. En producción desde finales de octubre de 2026; código privado del cliente.}
+\begin{itemize}\small
+  \item Pedidos y cuentas divididas, catálogo de productos, clientes con programa de lealtad, estadísticas de ventas y movimientos de caja.
+  \item Base de datos local SQLite, impresión de tickets con QR por Bluetooth (ESC/POS) e importación y exportación a Excel.
+  \item Compilación firmada para Windows con GitHub Actions.
+\end{itemize}
+\vspace{6pt}
+
+\entry{Modelado 3D arquitectónico en Blender}{Ene. 2025 – presente}{Colaboración con un arquitecto, en paralelo a la carrera}
+{\small De enero de 2025 a febrero de 2026 modelé en Blender sus proyectos arquitectónicos, con entregas periódicas
+para presentación; desde entonces hago los renders de sus proyectos con apoyo de IA (Claude) y manejo sus redes sociales.}\par
+\vspace{8pt}
+
+\entry{Sucursal de Paletería El Golpe}{Negocio propio · Verano 2026}{}
+{\small Operé una sucursal de paletas, helados y eskimos durante el Mundial 2026: contraté y coordiné a 4 empleados,
+y llevé inventario, caja, nómina y gastos del local.}\par
+\vspace{8pt}
+
+\entry{Mesero — Petirrojo}{Jun. – sep. 2024 · dic. 2024 – ene. 2025}{}
+{\small Temporadas de vacaciones. Atención directa a clientes, toma de pedidos y trabajo bajo presión en horas de alta demanda.}\par
+
+% ---------- Proyectos ----------
+\section{Proyectos Técnicos Destacados}
+
+\project{Sistema escolar de escritorio (CRUD)}{Python, PyQt6, PostgreSQL, Docker Compose, Matplotlib}{github.com/EstebanSantiag0/CRUD}
+{Gestión de estudiantes, materias y carreras con operaciones CRUD completas sobre PostgreSQL (desplegado con Docker)
+y estadísticas en gráficas interactivas de pastel y barras.}
+
+\project{Simulador de máquinas de Turing}{Python, PyQt6, PyInstaller · Trabajo en equipo}{github.com/Utemitas/DefinedTuringMachinesSimulator}
+{Simulación paso a paso de dos máquinas de Turing: máximo entre 0 y un número de 8 bits con signo, y reconocedor de
+palíndromos binarios de dos cintas, distribuida como ejecutable para Windows. Proyecto final de Teoría de la
+Computación en equipo de 8, organizado en Utemitas, la organización de GitHub que administro.}
+
+\project{Procesador RISC-V (RV32I) de un solo ciclo}{VHDL, Xilinx ISE 14.7, FPGA Spartan-3E}{github.com/EstebanSantiag0/RISC-VCPU}
+{CPU diseñada desde cero que ejecuta un subconjunto de RV32I (aritméticas, lógicas, carga/almacenamiento y saltos
+condicionales): ALU de 32 bits, banco de 32 registros, unidad de control, memorias de instrucciones y datos, y lógica de siguiente PC.}
+
+\project{Prácticas de diseño digital en FPGA}{VHDL, esquemáticos en Xilinx ISE 14.7, Digilent Nexys 2 (Spartan-3E)}{github.com/EstebanSantiag0}
+{Cinco diseños documentados que compilan desde un clon limpio: registro de corrimientos, contador decimal 0000–9999,
+marquesina de texto, multiplexado de display de 7 segmentos y generador PWM.}
+
+% ---------- Educación ----------
+\section{Educación y Formación Cultural}
+
+\entry{Ingeniería en Computación}{2024 – presente}{Universidad Tecnológica de la Mixteca (UTM), Huajuapan de León · 5.º semestre · Promedio 9.0}
+{\small Materias relevantes: Arquitectura de Computadoras, Estructuras de Datos, Compiladores, Sistemas Operativos,
+Bases de Datos y Programación Orientada a Objetos.}\par
+\vspace{8pt}
+
+\entry{Formación en Artes Escénicas (Teatro)}{6 semestres completados}{Escuela de Iniciación Artística asociada al INBAL, Huajuapan de León · Actor en la compañía “Metamorfosis Teatro”}
+{\small Dominio del escenario, dicción, oratoria, trabajo en equipo bajo presión, empatía y adaptabilidad en la comunicación.}\par
+
+% ---------- Idiomas ----------
+\section{Idiomas}
+{\color{ink}\bfseries Español:} nativo \quad·\quad
+{\color{ink}\bfseries Inglés:} avanzado (conversaciones técnicas y entrevistas) \quad·\quad
+{\color{ink}\bfseries Ruso y chino:} elemental
+
+\end{document}
