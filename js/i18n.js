@@ -46,7 +46,7 @@
       's.other': 'Other Experience',
       's.edu': 'Education and Cultural Training',
 
-      'profile': 'Computer Engineering student with a Flutter point-of-sale system in production and a RISC-V processor designed from scratch in VHDL.',
+      'profile': 'Computer Engineering student with cross-platform mobile development experience (Flutter, in production) and a RISC-V processor designed from scratch in VHDL.',
 
       'exp.date': 'Freelance · 2026 – present',
       'exp.role': 'Flutter Developer — Boopi POS',
@@ -87,6 +87,11 @@
       'sk.fw': 'Frameworks and data',
       'sk.tools': 'Tools',
       'sk.asm': 'x86-64 Assembly',
+      'sk.comp': 'Competencies',
+      'sk.oop': 'Object-Oriented Programming',
+      'sk.mobile': 'Mobile Development',
+      'sk.xplat': 'Cross-platform Apps',
+      'sk.team': 'Teamwork',
 
       'o1.title': '3D architectural modeling, collaboration with an architect',
       'o1.date': '(Jan. 2025 – present)',
@@ -139,7 +144,7 @@
       's.other': '其他经历',
       's.edu': '教育与文化背景',
 
-      'profile': '计算机工程专业学生，开发的 Flutter 收银系统已投入实际使用，并用 VHDL 从零设计了一颗 RISC-V 处理器。',
+      'profile': '计算机工程专业学生，具备移动开发经验（Flutter 跨平台收银应用已投入实际使用），并用 VHDL 从零设计了一颗 RISC-V 处理器。',
 
       'exp.date': '自由职业 · 2026 – 至今',
       'exp.role': 'Flutter 开发者 — Boopi POS',
@@ -180,6 +185,11 @@
       'sk.fw': '框架与数据',
       'sk.tools': '工具',
       'sk.asm': 'x86-64 汇编',
+      'sk.comp': '核心能力',
+      'sk.oop': '面向对象编程',
+      'sk.mobile': '移动开发',
+      'sk.xplat': '跨平台应用',
+      'sk.team': '团队合作',
 
       'o1.title': '建筑 3D 建模，与一位建筑师合作',
       'o1.date': '（2025 年 1 月 – 至今）',
