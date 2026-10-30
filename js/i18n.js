@@ -48,8 +48,8 @@
 
       'profile': 'Computer Engineering student with cross-platform mobile development experience (Flutter, in production) and a RISC-V processor designed from scratch in VHDL.',
 
-      'exp.date': 'Freelance · 2026 – present',
-      'exp.role': 'Flutter Developer — Boopi POS',
+      'exp.date': 'Freelance · Aug. 2026 – present',
+      'exp.role': 'Flutter Developer — Point-of-sale systems',
       'exp.private': '(client\'s private code)',
       'exp.1': b('200 orders in the first week') + ' in production for a café\'s point-of-sale system, by building it in Flutter from a single codebase for Android, Windows and Linux, with split bills and Bluetooth QR receipts (ESC/POS).',
       'exp.2': b('Paper notebook retired and 30 customers') + ' in a loyalty program, by implementing cash-register closings, sales statistics and Excel export on a local SQLite database.',
@@ -146,8 +146,8 @@
 
       'profile': '计算机工程专业学生，具备移动开发经验（Flutter 跨平台收银应用已投入实际使用），并用 VHDL 从零设计了一颗 RISC-V 处理器。',
 
-      'exp.date': '自由职业 · 2026 – 至今',
-      'exp.role': 'Flutter 开发者 — Boopi POS',
+      'exp.date': '自由职业 · 2026 年 8 月 – 至今',
+      'exp.role': 'Flutter 开发者 — 收银系统',
       'exp.private': '（客户私有代码）',
       'exp.1': b('上线第一周处理 200 笔订单') + '：用同一套 Flutter 代码为一家咖啡馆开发 Android、Windows 和 Linux 收银系统，支持分单结账和蓝牙（ESC/POS）二维码小票打印。',
       'exp.2': b('取代纸质账本，积累 30 名会员') + '：实现交班结算、销售统计和会员积分计划，数据存于可导出 Excel 的本地 SQLite。',
