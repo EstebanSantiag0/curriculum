@@ -1,0 +1,84 @@
+% =========================================================
+%  CV — Esteban de Jesús Santiago Torres (English)
+%  Printable version of https://estebansantiag0.github.io/curriculum/
+%  The design lives in cv-layout.tex. To build all three languages: ./build.sh
+% =========================================================
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[sfdefault]{roboto}
+\input{cv-layout}
+\hypersetup{pdftitle={CV — Esteban de Jesús Santiago Torres}}
+
+\begin{document}
+\cvbackground
+
+\begin{cvheader}
+  \cvname
+  \vspace{7pt}
+  {\color{white}\large Software Development · Computer Engineering Student}\par
+  \vspace{5pt}
+  {\small\color{side}\faUniversity\ \ UTM · 5th semester · GPA 9.0/10\qquad
+   \faMapMarker*\ \ Oaxaca, Mexico · remote or relocation}\par
+  \vspace{3pt}
+  {\small\color{side}\faLanguage\ \ Spanish native · English advanced · Chinese and Russian basic}
+\end{cvheader}
+
+\begin{cvside}
+  \sidesection{Profile}
+  {\small Computer Engineering student with cross-platform mobile development
+  experience (Flutter, in production) and a RISC-V processor designed from scratch in VHDL.
+  Looking for a software development internship in summer 2027.}\par
+
+  \sidesection{Education}
+  \edu{2024 – present}{Computer Engineering, Universidad Tecnológica de la Mixteca · GPA 9.0/10}
+      {Computer Architecture, Data Structures, Compilers, Operating Systems, Databases, Object-Oriented Programming}
+  \edu{6 semesters}{Theater, Escuela de Iniciación Artística (INBAL)}{Actor in “Metamorfosis Teatro”}
+
+  \sidesection{Skills}
+  \sidesub{Languages}
+  \skilltag{Python}\skilltag{Dart}\skilltag{C / C++}\skilltag{Java}\skilltag{SQL}\skilltag{JavaScript}\skilltag{HTML}\skilltag{CSS}\skilltag{VHDL}\skilltag{x86-64 asm}\par
+  \vspace{4pt}\sidesub{Frameworks and data}
+  \skilltag{Flutter}\skilltag{PyQt6}\skilltag{PostgreSQL}\skilltag{SQLite}\skilltag{MongoDB}\skilltag{Docker Compose}\par
+  \vspace{4pt}\sidesub{Tools}
+  \skilltag{Git}\skilltag{GitHub Actions}\skilltag{Linux}\skilltag{Xilinx ISE}\skilltag{FPGA Spartan-3E}\skilltag{ESP32}\par
+  \vspace{4pt}\sidesub{Competencies}
+  {\footnotesize\color{white}Object-Oriented Programming · Mobile Development · Cross-platform Apps · Teamwork}\par
+
+\end{cvside}
+
+\begin{cvmain}
+  \mainsection{Software Experience}
+  \tl*{\role{Flutter Developer — Boopi POS}{2026 – present}{Freelance}
+  \begin{itemize}\small
+    \item \hl{200 orders in the first week} in production for a café's point-of-sale system, by building it as a cross-platform
+          mobile and desktop app in Flutter (Android, Windows and Linux), with split bills and Bluetooth QR receipts (ESC/POS).
+    \item \hl{Paper notebook retired and 30 customers} in a loyalty program, by implementing cash-register closings,
+          sales statistics and Excel export on a local SQLite database.
+    \item \hl{Zero manual steps} per Windows release, by automating build and code signing with GitHub Actions.
+  \end{itemize}}
+
+  \mainsection{Featured Technical Projects}
+  \tl{\project{Single-cycle RISC-V (RV32I) processor}{VHDL, Xilinx ISE 14.7, Spartan-3E FPGA}{EstebanSantiag0/RISC-VCPU}
+  {CPU designed from scratch that runs a subset of RV32I (arithmetic, logic, load/store and conditional
+  branches): 32-bit ALU, 32-register file, control unit, memories and next-PC logic.}}
+  \tl{\project{Desktop school management system (CRUD)}{Python, PyQt6, PostgreSQL, Docker Compose, Matplotlib}{EstebanSantiag0/CRUD}
+  {Manages students, courses and degree programs on PostgreSQL in Docker, with statistics in pie and bar charts.}}
+  \tl{\project{Turing machine simulator}{Python, PyQt6, PyInstaller · Teamwork}{Utemitas/DefinedTuringMachinesSimulator}
+  {Two step-by-step Turing machines, distributed as a Windows executable. Team of 8 in Utemitas, a GitHub organization I manage.}}
+  \tl*{\project{Digital design labs on FPGA}{VHDL, Xilinx ISE 14.7 schematics, Digilent Nexys 2}{EstebanSantiag0}
+  {Five documented designs: shift register, 0000–9999 counter, text marquee, 7-segment display multiplexing and PWM.}}
+
+  \mainsection{Other Experience}
+  \tl{\role{3D architectural modeling}{Jan. 2025 – present}{Collaboration with an architect}
+  {\small \hl{5 projects delivered and the collaboration expanded} to renders and social media (Feb. 2026), by modeling their presentations in Blender.}}
+  \tl*{\role{Paletería El Golpe branch}{Summer 2026}{Own business}
+  {\small \hl{350 popsicles and 20 liters of ice cream sold} during the 2026 World Cup, by opening the branch and hiring and coordinating \hl{4 employees}, in charge of inventory, cash and payroll.}}
+\end{cvmain}
+
+\cvcontact{estebansantiag0.github.io/curriculum}{https://estebansantiag0.github.io/curriculum/?lang=en}
+
+\mbox{}
+\end{document}

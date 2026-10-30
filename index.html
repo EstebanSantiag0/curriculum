@@ -1,60 +1,33 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="es">
+<html class="scroll-smooth" lang="es" translate="no">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="google" content="notranslate"/>
 <title>Esteban de Jesús Santiago Torres | CV & Portafolio</title>
-<script>
-  // Tema inicial: el que eligió el visitante en esta sesión o, si no, el del navegador.
-  // Va antes de los estilos para que la página no parpadee en claro al cargar.
-  (function () {
-    var saved = sessionStorage.getItem('theme');
-    var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
-    document.documentElement.classList.toggle('dark', dark);
-  })();
-</script>
+<script src="js/theme-init.js"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script>
-  tailwind.config = {
-    darkMode: 'class',
-    theme: {
-      extend: {
-        fontFamily: {
-          sans: ['Inter', 'sans-serif'],
-          mono: ['JetBrains Mono', 'monospace'],
-        },
-        colors: {
-          brand: {
-            50: '#eff6ff',
-            100: '#dbeafe',
-            500: '#3b82f6',
-            600: '#2563eb',
-            700: '#1d4ed8',
-            800: '#1e40af',
-          }
-        },
-        boxShadow: {
-          'card': '0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 20px 25px -5px rgba(0, 0, 0, 0.02)',
-          'floating': '0 25px 50px -12px rgba(15, 23, 42, 0.09)',
-        }
-      }
-    }
-  }
-</script>
+<script src="js/tailwind.config.js"></script>
 <link href="style/style.css" rel="stylesheet"/>
 </head>
 <body class="bg-[#f0f3f8] dark:bg-slate-950 text-slate-800 dark:text-slate-200 font-sans antialiased min-h-screen py-6 sm:py-12 px-4 sm:px-6 lg:px-8 selection:bg-blue-100 selection:text-blue-900">
 
 <!-- Barra superior de acciones (no se imprime) -->
-<aside aria-label="Acciones de documento" class="no-print max-w-5xl mx-auto mb-5 flex items-center justify-between px-3">
+<aside aria-label="Acciones de documento" data-i18n-aria="aria.actions" class="no-print max-w-5xl mx-auto mb-5 flex items-center justify-between px-3">
   <div class="flex items-center gap-2 text-xs font-mono text-slate-500 dark:text-slate-400 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-slate-200/80 dark:border-slate-700/80 shadow-sm">
     <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
-    <a class="hover:text-blue-600 dark:hover:text-blue-400" href="cv/cv_esteban_santiago_torres.pdf" download>cv_esteban_santiago_torres.pdf</a>
+    <a class="hover:text-blue-600 dark:hover:text-blue-400" href="cv/cv_esteban_santiago_torres.pdf" data-i18n-href="pdf.href" data-i18n="pdf.name" download>cv_esteban_santiago_torres.pdf</a>
   </div>
   <div class="flex items-center gap-2">
+    <button id="lang-toggle" class="btn btn-secondary h-9 px-3 text-xs font-mono shadow-sm" aria-label="Cambiar idioma" title="Cambiar idioma" data-i18n-aria="lang.change" data-i18n-title="lang.change" type="button">
+      <svg class="icon w-[16px] h-[16px] text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+      <span id="lang-label">ES</span>
+    </button>
     <button id="theme-toggle" class="btn btn-secondary theme-toggle w-9 h-9 justify-center shadow-sm" aria-label="Cambiar a modo oscuro" title="Cambiar a modo oscuro" type="button">
       <svg class="icon icon-sun w-[18px] h-[18px] text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
         <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
@@ -63,7 +36,7 @@
         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
       </svg>
     </button>
-    <a class="btn btn-secondary px-4 py-1.5 text-xs sm:text-sm shadow-sm" href="cv/cv_esteban_santiago_torres.pdf" download title="Descargar el CV en PDF">
+    <a class="btn btn-secondary px-4 py-1.5 text-xs sm:text-sm shadow-sm" href="cv/cv_esteban_santiago_torres.pdf" data-i18n-href="pdf.href" download title="Descargar el CV en PDF" data-i18n-title="pdf.title">
       <svg class="icon w-[18px] h-[18px] text-slate-600 dark:text-slate-400 dark:text-slate-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
       </svg>
@@ -73,7 +46,7 @@
       <svg class="icon w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
         <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/>
       </svg>
-      <span>Contactar</span>
+      <span data-i18n="contact">Contactar</span>
     </a>
   </div>
 </aside>
@@ -84,12 +57,12 @@
   <!-- ENCABEZADO -->
   <header class="flex flex-col md:flex-row items-center md:items-start gap-7 sm:gap-10 pb-10 border-b border-slate-100 dark:border-slate-800">
     <div class="relative group shrink-0">
-      <div class="w-36 h-36 sm:w-40 sm:h-40 rounded-full p-1 bg-gradient-to-tr from-blue-600 via-sky-400 to-indigo-500 shadow-lg shadow-blue-500/20 flex items-center justify-center">
-        <div class="w-full h-full rounded-full overflow-hidden bg-slate-50 dark:bg-slate-800 ring-4 ring-white dark:ring-slate-900 flex items-center justify-center">
-          <img src="img/profile.jpg" alt="Esteban de Jesús Santiago Torres" class="w-full h-full object-cover object-center"/>
+      <div class="w-36 h-48 sm:w-40 sm:h-[13.25rem] rounded-[28px] p-1 bg-gradient-to-tr from-blue-600 via-sky-400 to-indigo-500 shadow-lg shadow-blue-500/20 flex items-center justify-center">
+        <div class="w-full h-full rounded-3xl overflow-hidden bg-slate-50 dark:bg-slate-800 ring-4 ring-white dark:ring-slate-900 flex items-center justify-center">
+          <img src="img/profile_card.jpg" alt="Esteban de Jesús Santiago Torres" class="w-full h-full object-cover object-center"/>
         </div>
       </div>
-      <span class="absolute bottom-1 right-2 inline-flex items-center justify-center p-1.5 bg-emerald-500 text-white rounded-full ring-4 ring-white dark:ring-slate-900 shadow-sm" title="Busco estancias profesionales para el verano de 2027">
+      <span class="absolute -bottom-2 -right-2 inline-flex items-center justify-center p-1.5 bg-emerald-500 text-white rounded-full ring-4 ring-white dark:ring-slate-900 shadow-sm" title="Busco estancias profesionales para el verano de 2027" data-i18n-title="badge.title">
         <svg class="icon w-[14px] h-[14px]" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
       </span>
     </div>
@@ -99,19 +72,19 @@
         <h1 class="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-slate-900 dark:text-slate-100 tracking-tight leading-none">Esteban de Jesús Santiago Torres</h1>
         <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-500/30">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-          Estancias · verano 2027
+          <span data-i18n="badge.text">Estancias · verano 2027</span>
         </span>
       </div>
-      <h2 class="text-base sm:text-lg lg:text-xl font-semibold text-blue-600 dark:text-blue-400 mb-3">20 años · Desarrollo de Software · Estudiante de Ingeniería en Computación</h2>
+      <h2 class="text-base sm:text-lg lg:text-xl font-semibold text-blue-600 dark:text-blue-400 mb-3" data-i18n="subtitle">20 años · Desarrollo de Software · Estudiante de Ingeniería en Computación</h2>
       <div class="flex items-center gap-3 mb-4">
-        <img src="img/utm-logo.png" alt="Escudo de la Universidad Tecnológica de la Mixteca" class="w-11 h-12 object-contain shrink-0 dark:bg-white dark:rounded-lg dark:p-0.5"/>
+        <img src="img/utm-logo.png" alt="Escudo de la Universidad Tecnológica de la Mixteca" data-i18n-alt="utm.alt" class="w-11 h-12 object-contain shrink-0 dark:bg-white dark:rounded-lg dark:p-0.5"/>
         <div class="text-left leading-tight">
-          <p class="text-sm sm:text-base font-bold text-slate-800 dark:text-slate-200">Universidad Tecnológica de la Mixteca (UTM)</p>
-          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium">Ingeniería en Computación · 5.º semestre · Promedio 9.0</p>
+          <p class="text-sm sm:text-base font-bold text-slate-800 dark:text-slate-200" data-i18n="utm.name">Universidad Tecnológica de la Mixteca (UTM)</p>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium" data-i18n="utm.detail">Ingeniería en Computación · 5.º semestre · Promedio 9.0</p>
         </div>
       </div>
-      <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed max-w-2xl font-normal mb-5">
-        Busco estancias profesionales en desarrollo de software para el verano de 2027, al concluir el 6.º semestre. Programo en Python, C/C++, Java y Dart, con bases de bajo nivel (VHDL, FPGA, RISC-V) y Linux como entorno de trabajo diario.
+      <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed max-w-2xl font-normal mb-5" data-i18n="seeking">
+        Busco una estancia profesional en desarrollo de software para el verano de 2027, al concluir el 6.º semestre.
       </p>
 
       <div class="flex flex-wrap items-center justify-center md:justify-start gap-2 sm:gap-3 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
@@ -137,7 +110,7 @@
         </a>
         <span class="contact-pill">
           <svg class="icon w-[17px] h-[17px] text-slate-400 dark:text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span>Huajuapan de León, Oaxaca, México — abierto a trabajo remoto o reubicación</span>
+          <span data-i18n="location">Huajuapan de León, Oaxaca, México — abierto a trabajo remoto o reubicación</span>
         </span>
       </div>
     </div>
@@ -148,182 +121,192 @@
 
     <!-- 1. PERFIL PROFESIONAL -->
     <section class="group-section">
-      <h3 class="section-title text-xl font-bold text-slate-900 dark:text-slate-100 mb-4 tracking-tight">Perfil Profesional</h3>
-      <p class="text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed mt-2">
-        Desarrollo de forma freelance un sistema de punto de venta en Flutter (Android, Windows y Linux) y hago aplicaciones de escritorio en Python (PyQt6) sobre PostgreSQL y Docker, además de programas en C/C++. Como complemento, diseño hardware digital en VHDL sobre FPGA, incluido un procesador RISC-V de un solo ciclo hecho desde cero.
-      </p>
-      <p class="text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed mt-3">
-        Fuera del código, colaboro desde 2025 con un arquitecto modelando en Blender y en el verano de 2026 operé una sucursal de paletería con 4 empleados. Seis semestres de teatro (INBAL) me dieron soltura para hablar en público. Inglés avanzado.
+      <h3 class="section-title text-xl font-bold text-slate-900 dark:text-slate-100 mb-4 tracking-tight" data-i18n="s.profile">Perfil Profesional</h3>
+      <p class="text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed mt-2" data-i18n="profile">
+        Estudiante de Ingeniería en Computación con un punto de venta en Flutter en producción y un procesador RISC-V diseñado desde cero en VHDL.
       </p>
     </section>
 
-    <!-- 2. HABILIDADES TÉCNICAS -->
+    <!-- 2. EXPERIENCIA EN SOFTWARE -->
     <section class="group-section">
-      <h3 class="section-title text-xl font-bold text-slate-900 dark:text-slate-100 mb-5 tracking-tight">Habilidades Técnicas</h3>
-
-      <div class="mt-2">
-        <h4 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2.5">Desarrollo de software</h4>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3.5 sm:gap-4">
-          <div class="skill-chip"><span>Python · PyQt6</span></div>
-          <div class="skill-chip"><span>C / C++</span></div>
-          <div class="skill-chip"><span>Java</span></div>
-          <div class="skill-chip"><span>Dart · Flutter</span></div>
-          <div class="skill-chip"><span>SQL · PostgreSQL</span></div>
-          <div class="skill-chip"><span>MongoDB</span></div>
-          <div class="skill-chip"><span>Docker</span></div>
-          <div class="skill-chip"><span>Claude Code (IA)</span></div>
-        </div>
-      </div>
-
-      <div class="mt-6">
-        <h4 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2.5">Sistemas, hardware y herramientas</h4>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3.5 sm:gap-4">
-          <div class="skill-chip"><span>Linux (Arch, Debian)</span></div>
-          <div class="skill-chip"><span>Git · GitHub</span></div>
-          <div class="skill-chip"><span>VHDL</span></div>
-          <div class="skill-chip"><span>Ensamblador x86-64</span></div>
-          <div class="skill-chip"><span>FPGA Spartan-3E (Nexys 2)</span></div>
-          <div class="skill-chip"><span>Xilinx ISE 14.7</span></div>
-          <div class="skill-chip"><span>ESP32</span></div>
-          <div class="skill-chip"><span>Blender (modelado 3D)</span></div>
+      <h3 class="section-title text-xl font-bold text-slate-900 dark:text-slate-100 mb-5 tracking-tight" data-i18n="s.exp">Experiencia en Software</h3>
+      <div class="info-card mt-2">
+        <div>
+          <span class="text-xs font-mono font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-500/10 px-2.5 py-0.5 rounded-full inline-block mb-2" data-i18n="exp.date">Freelance · 2026 – presente</span>
+          <h4 class="text-base font-bold text-slate-900 dark:text-slate-100"><span data-i18n="exp.role">Desarrollador Flutter — Boopi POS</span> <span class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400" data-i18n="exp.private">(código privado del cliente)</span></h4>
+          <ul class="list-disc pl-5 mt-2 space-y-1.5 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed marker:text-blue-600">
+            <li data-i18n="exp.1"><strong class="font-semibold text-slate-900 dark:text-slate-100">200 pedidos en la primera semana</strong> en producción del punto de venta de una cafetería, al construirlo en Flutter con un solo código para Android, Windows y Linux, con cuentas divididas y tickets QR por Bluetooth (ESC/POS).</li>
+            <li data-i18n="exp.2"><strong class="font-semibold text-slate-900 dark:text-slate-100">Libreta de papel eliminada y 30 clientes</strong> en un programa de lealtad, al implementar cortes de caja, estadísticas de ventas y exportación a Excel sobre SQLite local.</li>
+            <li data-i18n="exp.3"><strong class="font-semibold text-slate-900 dark:text-slate-100">Cero pasos manuales</strong> por versión publicada para Windows, al automatizar compilación y firma con GitHub Actions.</li>
+          </ul>
         </div>
       </div>
     </section>
 
     <!-- 3. PROYECTOS DESTACADOS -->
     <section class="group-section">
-      <h3 class="section-title text-xl font-bold text-slate-900 dark:text-slate-100 mb-5 tracking-tight">Proyectos Técnicos Destacados</h3>
+      <h3 class="section-title text-xl font-bold text-slate-900 dark:text-slate-100 mb-5 tracking-tight" data-i18n="s.projects">Proyectos Técnicos Destacados</h3>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mt-2">
 
         <article class="project-card">
           <div>
-            <h4 class="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 tracking-tight mb-1">Sistema escolar de escritorio (CRUD)</h4>
-            <div class="text-xs sm:text-[13px] font-semibold text-blue-600 dark:text-blue-400 mb-3">Tecnologías: Python, PyQt6, PostgreSQL, Docker Compose, Matplotlib</div>
-            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-              Aplicación de escritorio para gestionar estudiantes, materias y carreras con operaciones CRUD completas sobre PostgreSQL (desplegado con Docker) y estadísticas en gráficas interactivas de pastel y barras.
-            </p>
-          </div>
-          <div class="pt-3 mt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-end">
-            <a class="btn btn-secondary px-3 py-1.5 text-xs" href="https://github.com/EstebanSantiag0/CRUD" rel="noopener noreferrer" target="_blank">
-              <svg class="icon w-[15px] h-[15px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              <span>Ver repositorio</span>
-            </a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div>
-            <h4 class="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 tracking-tight mb-1">Simulador de máquinas de Turing</h4>
-            <div class="text-xs sm:text-[13px] font-semibold text-blue-600 dark:text-blue-400 mb-3">Tecnologías: Python, PyQt6, PyInstaller · Trabajo en equipo</div>
-            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-              Simulación paso a paso de dos máquinas de Turing: máximo entre 0 y un número de 8 bits con signo, y reconocedor de palíndromos binarios de dos cintas. Distribuida como ejecutable para Windows. Proyecto final de Teoría de la Computación en equipo de 8, organizado en Utemitas, la organización de GitHub que administro.
-            </p>
-          </div>
-          <div class="pt-3 mt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-end">
-            <a class="btn btn-secondary px-3 py-1.5 text-xs" href="https://github.com/Utemitas/DefinedTuringMachinesSimulator" rel="noopener noreferrer" target="_blank">
-              <svg class="icon w-[15px] h-[15px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              <span>Ver repositorio</span>
-            </a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div>
-            <h4 class="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 tracking-tight mb-1">Procesador RISC-V (RV32I) de un solo ciclo</h4>
-            <div class="text-xs sm:text-[13px] font-semibold text-blue-600 dark:text-blue-400 mb-3">Tecnologías: VHDL, Xilinx ISE 14.7, FPGA Spartan-3E</div>
-            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            <h4 class="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 tracking-tight mb-1" data-i18n="p1.title">Procesador RISC-V (RV32I) de un solo ciclo</h4>
+            <div class="text-xs sm:text-[13px] font-semibold text-blue-600 dark:text-blue-400 mb-3" data-i18n="p1.tech">Tecnologías: VHDL, Xilinx ISE 14.7, FPGA Spartan-3E</div>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="p1.desc">
               CPU diseñada desde cero que ejecuta un subconjunto de RV32I (aritméticas, lógicas, carga/almacenamiento y saltos condicionales): ALU de 32 bits, banco de 32 registros, unidad de control, memorias de instrucciones y datos, y lógica de siguiente PC.
             </p>
           </div>
           <div class="pt-3 mt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-end">
             <a class="btn btn-secondary px-3 py-1.5 text-xs" href="https://github.com/EstebanSantiag0/RISC-VCPU" rel="noopener noreferrer" target="_blank">
               <svg class="icon w-[15px] h-[15px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              <span>Ver repositorio</span>
+              <span data-i18n="repo">Ver repositorio</span>
             </a>
           </div>
         </article>
 
         <article class="project-card">
           <div>
-            <h4 class="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 tracking-tight mb-1">Prácticas de diseño digital en FPGA</h4>
-            <div class="text-xs sm:text-[13px] font-semibold text-blue-600 dark:text-blue-400 mb-3">Tecnologías: VHDL, esquemáticos en Xilinx ISE 14.7, Digilent Nexys 2 (Spartan-3E)</div>
-            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            <h4 class="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 tracking-tight mb-1" data-i18n="p2.title">Sistema escolar de escritorio (CRUD)</h4>
+            <div class="text-xs sm:text-[13px] font-semibold text-blue-600 dark:text-blue-400 mb-3" data-i18n="p2.tech">Tecnologías: Python, PyQt6, PostgreSQL, Docker Compose, Matplotlib</div>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="p2.desc">
+              Aplicación de escritorio para gestionar estudiantes, materias y carreras con operaciones CRUD completas sobre PostgreSQL (desplegado con Docker) y estadísticas en gráficas interactivas de pastel y barras.
+            </p>
+          </div>
+          <div class="pt-3 mt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-end">
+            <a class="btn btn-secondary px-3 py-1.5 text-xs" href="https://github.com/EstebanSantiag0/CRUD" rel="noopener noreferrer" target="_blank">
+              <svg class="icon w-[15px] h-[15px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <span data-i18n="repo">Ver repositorio</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div>
+            <h4 class="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 tracking-tight mb-1" data-i18n="p3.title">Simulador de máquinas de Turing</h4>
+            <div class="text-xs sm:text-[13px] font-semibold text-blue-600 dark:text-blue-400 mb-3" data-i18n="p3.tech">Tecnologías: Python, PyQt6, PyInstaller · Trabajo en equipo</div>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="p3.desc">
+              Simulación paso a paso de dos máquinas de Turing: máximo entre 0 y un número de 8 bits con signo, y reconocedor de palíndromos binarios de dos cintas. Distribuida como ejecutable para Windows. Proyecto final de Teoría de la Computación en equipo de 8, organizado en Utemitas, la organización de GitHub que administro.
+            </p>
+          </div>
+          <div class="pt-3 mt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-end">
+            <a class="btn btn-secondary px-3 py-1.5 text-xs" href="https://github.com/Utemitas/DefinedTuringMachinesSimulator" rel="noopener noreferrer" target="_blank">
+              <svg class="icon w-[15px] h-[15px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <span data-i18n="repo">Ver repositorio</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div>
+            <h4 class="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 tracking-tight mb-1" data-i18n="p4.title">Prácticas de diseño digital en FPGA</h4>
+            <div class="text-xs sm:text-[13px] font-semibold text-blue-600 dark:text-blue-400 mb-3" data-i18n="p4.tech">Tecnologías: VHDL, esquemáticos en Xilinx ISE 14.7, Digilent Nexys 2 (Spartan-3E)</div>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="p4.desc">
               Cinco diseños documentados que compilan desde un clon limpio: registro de corrimientos, contador decimal 0000–9999, marquesina de texto, multiplexado de display de 7 segmentos y generador PWM.
             </p>
           </div>
           <div class="pt-3 mt-4 border-t border-slate-100 dark:border-slate-800 flex flex-wrap items-center justify-end gap-2">
-            <a class="btn btn-secondary px-3 py-1.5 text-xs" href="https://github.com/EstebanSantiag0/Registro-de-Corrimientos-Universal-de-8-Bits" rel="noopener noreferrer" target="_blank"><span>Registro de corrimientos</span></a>
-            <a class="btn btn-secondary px-3 py-1.5 text-xs" href="https://github.com/EstebanSantiag0/Contador-Decimal-Ascendente-Descendente-en-FPGA" rel="noopener noreferrer" target="_blank"><span>Contador 0000–9999</span></a>
-            <a class="btn btn-secondary px-3 py-1.5 text-xs" href="https://github.com/EstebanSantiag0/Marquesina-de-Texto-en-Display-de-7-Segmentos" rel="noopener noreferrer" target="_blank"><span>Marquesina</span></a>
-            <a class="btn btn-secondary px-3 py-1.5 text-xs" href="https://github.com/EstebanSantiag0/Multiplexado-de-Display-de-7-Segmentos-en-VHDL" rel="noopener noreferrer" target="_blank"><span>Multiplexado 7 seg.</span></a>
-            <a class="btn btn-secondary px-3 py-1.5 text-xs" href="https://github.com/EstebanSantiag0/PWM-de-8-Bits-Controlado-por-Switches-en-VHDL" rel="noopener noreferrer" target="_blank"><span>PWM 8 bits</span></a>
+            <a class="btn btn-secondary px-3 py-1.5 text-xs" href="https://github.com/EstebanSantiag0/Registro-de-Corrimientos-Universal-de-8-Bits" rel="noopener noreferrer" target="_blank"><span data-i18n="fpga.1">Registro de corrimientos</span></a>
+            <a class="btn btn-secondary px-3 py-1.5 text-xs" href="https://github.com/EstebanSantiag0/Contador-Decimal-Ascendente-Descendente-en-FPGA" rel="noopener noreferrer" target="_blank"><span data-i18n="fpga.2">Contador 0000–9999</span></a>
+            <a class="btn btn-secondary px-3 py-1.5 text-xs" href="https://github.com/EstebanSantiag0/Marquesina-de-Texto-en-Display-de-7-Segmentos" rel="noopener noreferrer" target="_blank"><span data-i18n="fpga.3">Marquesina</span></a>
+            <a class="btn btn-secondary px-3 py-1.5 text-xs" href="https://github.com/EstebanSantiag0/Multiplexado-de-Display-de-7-Segmentos-en-VHDL" rel="noopener noreferrer" target="_blank"><span data-i18n="fpga.4">Multiplexado 7 seg.</span></a>
+            <a class="btn btn-secondary px-3 py-1.5 text-xs" href="https://github.com/EstebanSantiag0/PWM-de-8-Bits-Controlado-por-Switches-en-VHDL" rel="noopener noreferrer" target="_blank"><span data-i18n="fpga.5">PWM 8 bits</span></a>
           </div>
         </article>
 
       </div>
     </section>
 
-    <!-- 4. EXPERIENCIA LABORAL -->
+    <!-- 4. IDIOMAS -->
     <section class="group-section">
-      <h3 class="section-title text-xl font-bold text-slate-900 dark:text-slate-100 mb-5 tracking-tight">Experiencia Laboral</h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mt-2">
-
+      <h3 class="section-title text-xl font-bold text-slate-900 dark:text-slate-100 mb-5 tracking-tight" data-i18n="s.langs">Idiomas</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-2">
         <div class="info-card">
-          <div>
-            <span class="text-xs font-mono font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-500/10 px-2.5 py-0.5 rounded-full inline-block mb-2">Freelance · 2026 – presente</span>
-            <h4 class="text-base font-bold text-slate-900 dark:text-slate-100">Desarrollador Flutter — Boopi POS</h4>
-            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-2">
-              Diseño y desarrollo de un sistema de punto de venta para una cafetería, para Android, Windows y Linux: pedidos y cuentas divididas, catálogo de productos, clientes con programa de lealtad, estadísticas de ventas y movimientos de caja. Base de datos local SQLite, impresión de tickets con QR por Bluetooth (ESC/POS), importación y exportación a Excel, y compilación firmada para Windows con GitHub Actions. En producción desde finales de octubre de 2026; código privado del cliente.
-            </p>
+          <div class="flex items-center justify-between text-sm">
+            <span class="font-semibold text-slate-800 dark:text-slate-200" data-i18n="lang.en">Inglés</span>
+            <span class="text-blue-600 dark:text-blue-400 font-mono text-xs font-bold" data-i18n="lang.en.lvl">Avanzado</span>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-2" data-i18n="lang.en.desc">Comprensión auditiva y lectora completa; puedo sostener conversaciones técnicas específicas y entrevistas en inglés.</p>
+        </div>
+        <div class="info-card">
+          <div class="flex items-center justify-between text-sm">
+            <span class="font-semibold text-slate-800 dark:text-slate-200" data-i18n="lang.zhru">Chino y ruso</span>
+            <span class="text-slate-500 dark:text-slate-400 font-mono text-xs" data-i18n="lang.zhru.lvl">Básico</span>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-2" data-i18n="lang.zhru.desc">Preparando el HSK 1 de chino.</p>
+        </div>
+        <div class="info-card">
+          <div class="flex items-center justify-between text-sm">
+            <span class="font-semibold text-slate-800 dark:text-slate-200" data-i18n="lang.es">Español</span>
+            <span class="text-slate-500 dark:text-slate-400 font-mono text-xs" data-i18n="lang.es.lvl">Nativo</span>
           </div>
         </div>
-
-        <div class="info-card">
-          <div>
-            <span class="text-xs font-mono font-semibold text-violet-700 dark:text-violet-300 bg-violet-50 dark:bg-violet-500/10 px-2.5 py-0.5 rounded-full inline-block mb-2">Ene. 2025 – presente</span>
-            <h4 class="text-base font-bold text-slate-900 dark:text-slate-100">Modelado 3D arquitectónico en Blender</h4>
-            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-2">
-              Colaboración con un arquitecto en paralelo a la carrera. De enero de 2025 a febrero de 2026 modelé en Blender sus proyectos arquitectónicos, con entregas periódicas para presentación; desde entonces hago los renders de sus proyectos con apoyo de IA (Claude) y manejo sus redes sociales.
-            </p>
-          </div>
-        </div>
-
-        <div class="info-card">
-          <div>
-            <span class="text-xs font-mono font-semibold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-500/10 px-2.5 py-0.5 rounded-full inline-block mb-2">Negocio propio · Verano 2026</span>
-            <h4 class="text-base font-bold text-slate-900 dark:text-slate-100">Sucursal de Paletería El Golpe</h4>
-            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-2">
-              Operé una sucursal de paletas, helados y eskimos durante el Mundial 2026: contraté y coordiné a 4 empleados, y llevé inventario, caja, nómina y gastos del local.
-            </p>
-          </div>
-        </div>
-
-        <div class="info-card">
-          <div>
-            <span class="text-xs font-mono font-semibold text-amber-700 dark:text-amber-300 bg-amber-50 dark:bg-amber-500/10 px-2.5 py-0.5 rounded-full inline-block mb-2">Jun. – sep. 2024 · dic. 2024 – ene. 2025</span>
-            <h4 class="text-base font-bold text-slate-900 dark:text-slate-100">Mesero — Petirrojo</h4>
-            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-2">
-              Temporadas de vacaciones. Atención directa a clientes, toma de pedidos y trabajo bajo presión en horas de alta demanda.
-            </p>
-          </div>
-        </div>
-
       </div>
     </section>
 
-    <!-- 5. EDUCACIÓN Y FORMACIÓN CULTURAL -->
+    <!-- 5. HABILIDADES TÉCNICAS -->
     <section class="group-section">
-      <h3 class="section-title text-xl font-bold text-slate-900 dark:text-slate-100 mb-5 tracking-tight">Educación y Formación Cultural</h3>
+      <h3 class="section-title text-xl font-bold text-slate-900 dark:text-slate-100 mb-5 tracking-tight" data-i18n="s.skills">Habilidades Técnicas</h3>
+
+      <div class="mt-2">
+        <h4 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2.5" data-i18n="sk.langs">Lenguajes</h4>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3.5 sm:gap-4">
+          <div class="skill-chip"><span>Python</span></div>
+          <div class="skill-chip"><span>Dart</span></div>
+          <div class="skill-chip"><span>C / C++</span></div>
+          <div class="skill-chip"><span>Java</span></div>
+          <div class="skill-chip"><span>SQL</span></div>
+          <div class="skill-chip"><span>VHDL</span></div>
+          <div class="skill-chip"><span data-i18n="sk.asm">Ensamblador x86-64</span></div>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <h4 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2.5" data-i18n="sk.fw">Frameworks y datos</h4>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3.5 sm:gap-4">
+          <div class="skill-chip"><span>Flutter</span></div>
+          <div class="skill-chip"><span>PyQt6</span></div>
+          <div class="skill-chip"><span>PostgreSQL</span></div>
+          <div class="skill-chip"><span>SQLite</span></div>
+          <div class="skill-chip"><span>MongoDB</span></div>
+          <div class="skill-chip"><span>Docker</span></div>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <h4 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2.5" data-i18n="sk.tools">Herramientas</h4>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3.5 sm:gap-4">
+          <div class="skill-chip"><span>Git</span></div>
+          <div class="skill-chip"><span>GitHub Actions</span></div>
+          <div class="skill-chip"><span>Linux (Arch, Debian)</span></div>
+          <div class="skill-chip"><span>FPGA Spartan-3E (Nexys 2)</span></div>
+          <div class="skill-chip"><span>Xilinx ISE 14.7</span></div>
+          <div class="skill-chip"><span>ESP32</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. OTRA EXPERIENCIA -->
+    <section class="group-section">
+      <h3 class="section-title text-xl font-bold text-slate-900 dark:text-slate-100 mb-5 tracking-tight" data-i18n="s.other">Otra Experiencia</h3>
+      <ul class="list-disc pl-5 mt-2 space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed marker:text-blue-600">
+        <li><span class="font-bold text-slate-900 dark:text-slate-100" data-i18n="o1.title">Modelado 3D arquitectónico, colaboración con un arquitecto</span> <span class="font-mono text-blue-600 dark:text-blue-400" data-i18n="o1.date">(ene. 2025 – presente)</span><span data-i18n="o1.desc">: <strong class="font-semibold text-slate-900 dark:text-slate-100">5 proyectos entregados y la colaboración ampliada</strong> a renders y redes sociales (feb. 2026), al modelar en Blender sus presentaciones.</span></li>
+        <li><span class="font-bold text-slate-900 dark:text-slate-100" data-i18n="o2.title">Sucursal de Paletería El Golpe, negocio propio</span> <span class="font-mono text-blue-600 dark:text-blue-400" data-i18n="o2.date">(verano 2026)</span><span data-i18n="o2.desc">: <strong class="font-semibold text-slate-900 dark:text-slate-100">350 paletas y 20 litros de nieve vendidos</strong> durante el Mundial 2026, al abrir la sucursal y contratar y coordinar a <strong class="font-semibold text-slate-900 dark:text-slate-100">4 empleados</strong>, con inventario, caja y nómina a mi cargo.</span></li>
+      </ul>
+    </section>
+
+    <!-- 7. EDUCACIÓN Y FORMACIÓN CULTURAL -->
+    <section class="group-section">
+      <h3 class="section-title text-xl font-bold text-slate-900 dark:text-slate-100 mb-5 tracking-tight" data-i18n="s.edu">Educación y Formación Cultural</h3>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mt-2">
 
         <div class="info-card">
           <div class="flex items-start gap-4">
-            <img src="img/utm-logo.png" alt="Escudo de la Universidad Tecnológica de la Mixteca" class="w-14 h-16 object-contain shrink-0 dark:bg-white dark:rounded-lg dark:p-1"/>
+            <img src="img/utm-logo.png" alt="Escudo de la Universidad Tecnológica de la Mixteca" data-i18n-alt="utm.alt" class="w-14 h-16 object-contain shrink-0 dark:bg-white dark:rounded-lg dark:p-1"/>
             <div>
-              <span class="text-xs font-mono font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-500/10 px-2.5 py-0.5 rounded-full inline-block mb-1.5">2024 – presente · 5.º semestre · Promedio 9.0</span>
-              <h4 class="text-base font-bold text-slate-900 dark:text-slate-100">Ingeniería en Computación</h4>
-              <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-semibold">Universidad Tecnológica de la Mixteca (UTM), Huajuapan de León</p>
-              <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-2 font-medium">Materias relevantes: Arquitectura de Computadoras, Estructuras de Datos, Compiladores, Sistemas Operativos, Bases de Datos y Programación Orientada a Objetos</p>
+              <span class="text-xs font-mono font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-500/10 px-2.5 py-0.5 rounded-full inline-block mb-1.5" data-i18n="edu1.date">2024 – presente · 5.º semestre · Promedio 9.0</span>
+              <h4 class="text-base font-bold text-slate-900 dark:text-slate-100" data-i18n="edu1.title">Ingeniería en Computación</h4>
+              <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-semibold" data-i18n="edu1.school">Universidad Tecnológica de la Mixteca (UTM), Huajuapan de León</p>
+              <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-2 font-medium" data-i18n="edu1.subjects">Materias relevantes: Arquitectura de Computadoras, Estructuras de Datos, Compiladores, Sistemas Operativos, Bases de Datos y Programación Orientada a Objetos</p>
             </div>
           </div>
         </div>
@@ -331,42 +314,13 @@
         <div class="info-card">
           <div>
             <div class="flex items-center justify-between gap-2 mb-1.5">
-              <span class="text-xs font-mono font-semibold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-500/10 px-2.5 py-0.5 rounded-full">6 semestres completados</span>
+              <span class="text-xs font-mono font-semibold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-500/10 px-2.5 py-0.5 rounded-full" data-i18n="edu2.date">6 semestres completados</span>
             </div>
-            <h4 class="text-base font-bold text-slate-900 dark:text-slate-100">Formación en Artes Escénicas (Teatro)</h4>
-            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mb-3 font-medium">Escuela de Iniciación Artística asociada al INBAL, Huajuapan de León — Actor en la compañía "Metamorfosis Teatro"</p>
-            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-              Habilidades desarrolladas: dominio del escenario, dicción, oratoria, trabajo en equipo bajo presión, empatía y adaptabilidad en la comunicación.
-            </p>
+            <h4 class="text-base font-bold text-slate-900 dark:text-slate-100" data-i18n="edu2.title">Formación en Artes Escénicas (Teatro)</h4>
+            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium" data-i18n="edu2.desc">Escuela de Iniciación Artística asociada al INBAL, Huajuapan de León — Actor en la compañía "Metamorfosis Teatro"</p>
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- 6. IDIOMAS -->
-    <section class="group-section">
-      <h3 class="section-title text-xl font-bold text-slate-900 dark:text-slate-100 mb-5 tracking-tight">Idiomas</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-2">
-        <div class="info-card">
-          <div class="flex items-center justify-between text-sm">
-            <span class="font-semibold text-slate-800 dark:text-slate-200">Español</span>
-            <span class="text-slate-500 dark:text-slate-400 font-mono text-xs">Nativo</span>
-          </div>
-        </div>
-        <div class="info-card">
-          <div class="flex items-center justify-between text-sm">
-            <span class="font-semibold text-slate-800 dark:text-slate-200">Inglés</span>
-            <span class="text-blue-600 dark:text-blue-400 font-mono text-xs font-bold">Avanzado</span>
-          </div>
-          <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">Comprensión auditiva y lectora completa; puedo sostener conversaciones técnicas específicas y entrevistas en inglés.</p>
-        </div>
-        <div class="info-card">
-          <div class="flex items-center justify-between text-sm">
-            <span class="font-semibold text-slate-800 dark:text-slate-200">Ruso y chino</span>
-            <span class="text-slate-500 dark:text-slate-400 font-mono text-xs">Elemental</span>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -375,16 +329,16 @@
   <!-- PIE DE PÁGINA Y CONTACTO DIRECTO -->
   <footer class="mt-12 pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
     <div class="space-y-1.5">
-      <p class="font-medium text-slate-700 dark:text-slate-300">Email: <a class="text-blue-600 dark:text-blue-400 hover:underline font-mono" href="mailto:esstebansantiag0@gmail.com">esstebansantiag0@gmail.com</a></p>
-      <p class="font-medium text-slate-700 dark:text-slate-300">Teléfono: <a class="text-blue-600 dark:text-blue-400 hover:underline font-mono" href="tel:+529531957537">953 195 7537</a></p>
-      <p class="font-medium text-slate-700 dark:text-slate-300">GitHub: <a class="text-blue-600 dark:text-blue-400 hover:underline font-mono" href="https://github.com/EstebanSantiag0" rel="noopener noreferrer" target="_blank">github.com/EstebanSantiag0</a></p>
-      <p class="font-medium text-slate-700 dark:text-slate-300">LinkedIn: <a class="text-blue-600 dark:text-blue-400 hover:underline font-mono" href="https://www.linkedin.com/in/esteban-de-jes%C3%BAs-santiago-torres-8b5aab447/" rel="noopener noreferrer" target="_blank">Esteban de Jesús Santiago Torres</a></p>
-      <p class="font-medium text-slate-700 dark:text-slate-300">Ubicación: Huajuapan de León, Oaxaca, México — disponible para trabajo en línea o reubicación</p>
+      <p class="font-medium text-slate-700 dark:text-slate-300"><span data-i18n="f.email">Email:</span> <a class="text-blue-600 dark:text-blue-400 hover:underline font-mono" href="mailto:esstebansantiag0@gmail.com">esstebansantiag0@gmail.com</a></p>
+      <p class="font-medium text-slate-700 dark:text-slate-300"><span data-i18n="f.phone">Teléfono:</span> <a class="text-blue-600 dark:text-blue-400 hover:underline font-mono" href="tel:+529531957537">953 195 7537</a></p>
+      <p class="font-medium text-slate-700 dark:text-slate-300"><span data-i18n="f.github">GitHub:</span> <a class="text-blue-600 dark:text-blue-400 hover:underline font-mono" href="https://github.com/EstebanSantiag0" rel="noopener noreferrer" target="_blank">github.com/EstebanSantiag0</a></p>
+      <p class="font-medium text-slate-700 dark:text-slate-300"><span data-i18n="f.linkedin">LinkedIn:</span> <a class="text-blue-600 dark:text-blue-400 hover:underline font-mono" href="https://www.linkedin.com/in/esteban-de-jes%C3%BAs-santiago-torres-8b5aab447/" rel="noopener noreferrer" target="_blank">Esteban de Jesús Santiago Torres</a></p>
+      <p class="font-medium text-slate-700 dark:text-slate-300" data-i18n="f.location">Ubicación: Huajuapan de León, Oaxaca, México — disponible para trabajo en línea o reubicación</p>
     </div>
     <div class="flex items-center gap-2.5 self-stretch sm:self-auto justify-end">
-      <a class="btn btn-secondary flex-1 sm:flex-initial justify-center px-4 py-2 text-xs" href="cv/cv_esteban_santiago_torres.pdf" download>
+      <a class="btn btn-secondary flex-1 sm:flex-initial justify-center px-4 py-2 text-xs" href="cv/cv_esteban_santiago_torres.pdf" data-i18n-href="pdf.href" download>
         <svg class="icon w-[16px] h-[16px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        <span>Descargar como PDF</span>
+        <span data-i18n="f.pdf">Descargar como PDF</span>
       </a>
     </div>
   </footer>
@@ -392,61 +346,8 @@
 
 <p class="text-center text-xs text-slate-400 dark:text-slate-500 mt-6 font-mono no-print">© 2026 Esteban de Jesús Santiago Torres</p>
 
-<script>
-  // Botón sol/luna: cambia el tema con un círculo que se expande desde el botón.
-  (function () {
-    var root = document.documentElement;
-    var toggle = document.getElementById('theme-toggle');
-    var systemDark = window.matchMedia('(prefers-color-scheme: dark)');
-
-    function updateLabel() {
-      var label = root.classList.contains('dark') ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro';
-      toggle.setAttribute('aria-label', label);
-      toggle.title = label;
-    }
-
-    function setTheme(dark) {
-      root.classList.add('theme-switching');
-      root.classList.toggle('dark', dark);
-      updateLabel();
-      // Se quitan las transiciones de color durante el cambio para que no se mezclen con el círculo
-      requestAnimationFrame(function () {
-        requestAnimationFrame(function () { root.classList.remove('theme-switching'); });
-      });
-    }
-
-    toggle.addEventListener('click', function () {
-      var dark = !root.classList.contains('dark');
-      sessionStorage.setItem('theme', dark ? 'dark' : 'light');
-
-      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (!document.startViewTransition || reduceMotion) {
-        setTheme(dark);
-        return;
-      }
-
-      // Centro del botón y radio hasta la esquina más lejana de la ventana. Se pasan a CSS como
-      // variables para que el círculo empiece en 0 desde el primer cuadro (si se anima desde JS,
-      // la página nueva alcanza a verse completa un cuadro y parpadea)
-      var rect = toggle.getBoundingClientRect();
-      var x = rect.left + rect.width / 2;
-      var y = rect.top + rect.height / 2;
-      var radius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
-      root.style.setProperty('--theme-x', x + 'px');
-      root.style.setProperty('--theme-y', y + 'px');
-      root.style.setProperty('--theme-r', radius + 'px');
-
-      document.startViewTransition(function () { setTheme(dark); });
-    });
-
-    // Si el visitante no ha elegido tema, sigue los cambios del sistema
-    systemDark.addEventListener('change', function (e) {
-      if (!sessionStorage.getItem('theme')) setTheme(e.matches);
-    });
-
-    updateLabel();
-  })();
-</script>
+<script src="js/i18n.js"></script>
+<script src="js/theme.js"></script>
 
 </body>
 </html>

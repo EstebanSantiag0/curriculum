@@ -1,0 +1,149 @@
+% =========================================================
+%  Plantilla compartida del CV (español, inglés y chino).
+%  Cada cv_esteban_santiago_torres*.tex elige idioma y tipografía y hace \input{cv-layout}.
+% =========================================================
+\usepackage[margin=0pt]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+% Sin ligaduras (ﬁ, ﬂ) en pdflatex: los ATS leen "ﬁrma" como otra palabra y no encuentran "firma".
+% \pdfgentounicode sólo existe en pdfTeX; xelatex (chino) no las necesita quitar.
+\ifdefined\pdfgentounicode\DisableLigatures[f]{encoding = *, family = *}\fi
+
+% Paleta azul (misma familia que la página web)
+\definecolor{brand}{HTML}{2563EB}  % azul principal
+\definecolor{sky}{HTML}{60A5FA}    % azul claro para acentos sobre fondo oscuro
+\definecolor{navy}{HTML}{0F1E3D}   % fondo de barra lateral y encabezado
+\definecolor{navy2}{HTML}{1E3A6E}  % etiquetas sobre la barra lateral
+\definecolor{ink}{HTML}{0F172A}
+\definecolor{body}{HTML}{334155}
+\definecolor{muted}{HTML}{64748B}
+\definecolor{side}{HTML}{CBD5E1}   % texto sobre fondo oscuro
+
+\hypersetup{pdfauthor={Esteban de Jesús Santiago Torres}}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\TPHorizModule}{1cm}
+\setlength{\TPVertModule}{1cm}
+\textblockorigin{0pt}{0pt}
+
+% ---------- Medidas de la plantilla (cm) ----------
+\def\sidew{7.2}     % ancho de la barra lateral
+\def\headh{3.4}     % alto del encabezado oscuro
+\def\sidetop{4.3}   % donde empieza la barra lateral
+\def\barh{1.25}     % alto de la franja de contacto inferior
+
+% Títulos de sección
+\newcommand{\mainsection}[1]{%
+  \vspace{15pt}{\color{ink}\large\bfseries\MakeUppercase{#1}}\par
+  \vspace{1pt}\textcolor{brand}{\rule{5.2cm}{1.6pt}}\par\vspace{7pt}}
+\newcommand{\sidesection}[1]{%
+  \vspace{8pt}{\color{white}\large\bfseries\MakeUppercase{#1}}\par
+  \vspace{1pt}\textcolor{sky}{\rule{1.4cm}{1.6pt}}\par\vspace{5pt}}
+\newcommand{\sidesub}[1]{{\footnotesize\color{sky}\bfseries #1}\par\vspace{3pt}}
+
+\setlist[itemize]{leftmargin=1.0em, itemsep=1pt, topsep=2pt, parsep=0pt, label={\color{brand}\textbullet}}
+
+% Línea de tiempo: \tl{contenido} une el punto con el siguiente; \tl*{contenido} es el último
+\newsavebox\tlbox
+\makeatletter
+\newcommand{\tl}{\@ifstar{\@tl{0}}{\@tl{1}}}
+\newcommand{\@tl}[2]{%
+  \sbox\tlbox{\parbox[t]{\dimexpr\linewidth-0.65cm}{#2\par\vspace{9pt}}}%
+  \noindent\makebox[0.65cm][l]{\begin{tikzpicture}[overlay]
+    \ifnum#1=1
+      \draw[brand!45, line width=1.2pt] (0.17,0.06) -- (0.17,{0.11cm-\ht\tlbox-\dp\tlbox});
+    \fi
+    \fill[white] (0.17,0.06) circle (4.6pt);
+    \fill[brand] (0.17,0.06) circle (3.6pt);
+  \end{tikzpicture}}\usebox\tlbox\par}
+\makeatother
+
+\newcommand{\hl}[1]{{\color{ink}\bfseries #1}}
+
+% \role{puesto}{fecha}{lugar}
+\newcommand{\role}[3]{%
+  {\color{ink}\bfseries #1}\ifx&#3&\else\ {\small\itshape\color{muted}· #3}\fi
+  \hfill{\small\color{brand}\bfseries #2}\par}
+
+% \project{nombre}{tecnologías}{repo}{texto}
+\newcommand{\project}[4]{%
+  {\color{ink}\bfseries #1}\hfill{\footnotesize\href{https://github.com/#3}{\color{brand}\faGithub\ #3}}\par
+  {\footnotesize\color{brand}#2}\par
+  \vspace{1pt}{\small #4}\par}
+
+% Etiqueta de habilidad sobre la barra lateral
+\newcommand{\skilltag}[1]{%
+  \tikz[baseline=(t.base)]\node[fill=navy2, text=white, rounded corners=3pt,
+    inner xsep=4pt, inner ysep=2.2pt, font=\footnotesize](t){#1};\hspace{1pt}\allowbreak}
+
+% Nivel de idioma con 5 puntos: \level{n}
+\newcommand{\level}[1]{%
+  \tikz[baseline=-2.6pt]{\foreach \i in {1,...,5}{
+    \ifnum\i>#1 \fill[navy2] (\i*0.32,0) circle (3.3pt);
+    \else \fill[sky] (\i*0.32,0) circle (3.3pt); \fi}}}
+\newcommand{\lang}[3]{{\color{white}\bfseries #1}\ {\footnotesize\color{side}#3}\hfill\level{#2}\par\vspace{4pt}}
+
+% Punto blanco para la educación en la barra lateral
+\newcommand{\edu}[3]{%
+  \noindent\makebox[0.5cm][l]{\tikz[overlay]\fill[white] (0.12,0.1) circle (3.8pt);}%
+  {\color{sky}\bfseries #1}\par
+  \leftskip=0.5cm{\small\color{white}#2}\par\vspace{1pt}
+  \ifx&#3&\else{\footnotesize\color{side}#3}\par\fi\leftskip=0pt\vspace{6pt}}
+
+\newcommand{\contact}[2]{\mbox{{\color{white}#1}\ \ #2}}
+
+% ---------- Fondo: encabezado, barra lateral, franja inferior y foto ----------
+\newcommand{\cvbackground}{%
+\begin{tikzpicture}[remember picture, overlay]
+  \begin{scope}[shift={(current page.north west)}]
+    \def\W{21.59}\def\H{27.94}
+    % encabezado oscuro a la derecha
+    \fill[navy] (\sidew,0) rectangle (\W,-\headh);
+    \fill[brand] (\sidew,-\headh) rectangle (\W,-\headh-0.12);
+    % barra lateral
+    \fill[navy] (0,-\sidetop) rectangle (\sidew,-\H+\barh);
+    % franja de contacto
+    \fill[brand] (0,-\H) rectangle (\W,-\H+\barh);
+    % círculos decorativos
+    \foreach \x in {0.9,1.55,2.2}
+      \draw[navy, line width=2.2pt] (\x,-0.95) circle (0.22);
+    % foto: rectángulo con bordes redondeados y marco blanco
+    \def\pw{4.05}\def\ph{5.4}\def\px{1.575}\def\py{1.55}
+    \fill[white, rounded corners=0.62cm]
+      (\px-0.18,-\py+0.18) rectangle (\px+\pw+0.18,-\py-\ph-0.18);
+    \begin{scope}
+      \clip[rounded corners=0.48cm] (\px,-\py) rectangle (\px+\pw,-\py-\ph);
+      \node[anchor=north west, inner sep=0] at (\px,-\py)
+        {\includegraphics[width=\pw cm]{../img/profile_card.jpg}};
+    \end{scope}
+  \end{scope}
+\end{tikzpicture}}
+
+% ---------- Bloques de la página ----------
+\newenvironment{cvheader}{\begin{textblock}{12.9}(7.95,0.6)}{\end{textblock}}
+\newenvironment{cvside}{\begin{textblock}{5.8}(0.75,6.95)\color{side}\raggedright}{\end{textblock}}
+\newenvironment{cvmain}{\begin{textblock}{12.85}(7.95,3.65)\color{body}}{\end{textblock}}
+
+% Nombre en el encabezado
+\newcommand{\cvname}{{\color{sky}\fontsize{23}{26}\selectfont\bfseries Esteban de Jesús Santiago Torres}\par}
+
+% Franja de contacto: \cvcontact{texto del enlace a la web}{url de la web}
+% Las URLs van escritas completas (no "LinkedIn"/"Portafolio") para que los ATS las extraigan.
+\newcommand{\cvcontact}[2]{%
+\begin{textblock}{20.4}(0.6,26.98)
+  \centering\small\color{white}
+  \contact{\faPhone}{\href{tel:+529531957537}{953 195 7537}}\hfill
+  \contact{\faEnvelope}{\href{mailto:esstebansantiag0@gmail.com}{esstebansantiag0@gmail.com}}\hfill
+  \contact{\faGithub}{\href{https://github.com/EstebanSantiag0}{github.com/EstebanSantiag0}}\par
+  \vspace{3pt}
+  \contact{\faLinkedin}{\href{https://www.linkedin.com/in/esteban-de-jes\%C3\%BAs-santiago-torres-8b5aab447/}{linkedin.com/in/esteban-de-jesús-santiago-torres-8b5aab447}}\hfill
+  \contact{\faGlobe}{\href{#2}{#1}}
+\end{textblock}}

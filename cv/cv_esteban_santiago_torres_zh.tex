@@ -1,0 +1,92 @@
+% =========================================================
+%  CV — Esteban de Jesús Santiago Torres（中文）
+%  Versión imprimible de https://estebansantiag0.github.io/curriculum/
+%  Se compila con xelatex (no pdflatex) para usar Noto Sans CJK SC. Para los tres idiomas: ./build.sh
+% =========================================================
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage{fontspec}
+% Noto Sans CJK viene en colecciones .ttc; el índice 2 es la variante SC (chino simplificado)
+\defaultfontfeatures{Path=/usr/share/fonts/noto-cjk/}
+\setmainfont{NotoSansCJK-Regular.ttc}[FontIndex=2,
+  BoldFont=NotoSansCJK-Bold.ttc, BoldFeatures={FontIndex=2},
+  ItalicFont=NotoSansCJK-Regular.ttc, ItalicFeatures={FontIndex=2},
+  BoldItalicFont=NotoSansCJK-Bold.ttc, BoldItalicFeatures={FontIndex=2}]
+\setsansfont{NotoSansCJK-Regular.ttc}[FontIndex=2,
+  BoldFont=NotoSansCJK-Bold.ttc, BoldFeatures={FontIndex=2},
+  ItalicFont=NotoSansCJK-Regular.ttc, ItalicFeatures={FontIndex=2},
+  BoldItalicFont=NotoSansCJK-Bold.ttc, BoldItalicFeatures={FontIndex=2}]
+\renewcommand{\familydefault}{\sfdefault}
+% El chino no lleva espacios: XeTeX puede cortar línea entre caracteres (con un poco de elasticidad)
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt
+\input{cv-layout}
+\hypersetup{pdftitle={简历 — Esteban de Jesús Santiago Torres}}
+
+\begin{document}
+\cvbackground
+
+\begin{cvheader}
+  \cvname
+  \vspace{7pt}
+  {\color{white}\large 软件开发 · 计算机工程专业学生}\par
+  \vspace{5pt}
+  {\small\color{side}\faUniversity\ \ UTM · 第 5 学期 · 平均成绩 9.0/10\qquad
+   \faMapMarker*\ \ 墨西哥瓦哈卡州 · 可远程或异地工作}\par
+  \vspace{3pt}
+  {\small\color{side}\faLanguage\ \ 西班牙语（母语）· 英语（高级）· 中文、俄语（初级 · HSK 1）}
+\end{cvheader}
+
+\begin{cvside}
+  \sidesection{个人简介}
+  {\small 计算机工程专业学生，具备移动开发经验（Flutter 跨平台收银应用已投入实际使用），并用 VHDL 从零设计了一颗
+  RISC-V 处理器。希望在 2027 年暑期获得一份软件开发实习。}\par
+
+  \sidesection{教育背景}
+  \edu{2024 – 至今}{计算机工程，米斯特卡科技大学 · 平均成绩 9.0/10}
+      {计算机体系结构、数据结构、编译原理、操作系统、数据库、面向对象编程}
+  \edu{6 个学期}{戏剧，艺术启蒙学校（INBAL）}{“Metamorfosis Teatro” 剧团演员}
+
+  \sidesection{技能}
+  \sidesub{编程语言}
+  \skilltag{Python}\skilltag{Dart}\skilltag{C / C++}\skilltag{Java}\skilltag{SQL}\skilltag{JavaScript}\skilltag{HTML}\skilltag{CSS}\skilltag{VHDL}\skilltag{x86-64 汇编}\par
+  \vspace{4pt}\sidesub{框架与数据}
+  \skilltag{Flutter}\skilltag{PyQt6}\skilltag{PostgreSQL}\skilltag{SQLite}\skilltag{MongoDB}\skilltag{Docker Compose}\par
+  \vspace{4pt}\sidesub{工具}
+  \skilltag{Git}\skilltag{GitHub Actions}\skilltag{Linux}\skilltag{Xilinx ISE}\skilltag{FPGA Spartan-3E}\skilltag{ESP32}\par
+  \vspace{4pt}\sidesub{核心能力}
+  \skilltag{面向对象编程}\skilltag{移动开发}\skilltag{跨平台应用}\skilltag{团队合作}\par
+
+\end{cvside}
+
+\begin{cvmain}
+  \mainsection{软件开发经验}
+  \tl*{\role{Flutter 开发者 — Boopi POS}{2026 – 至今}{自由职业}
+  \begin{itemize}\small
+    \item \hl{上线第一周处理 200 笔订单}：用 Flutter 为一家咖啡馆开发跨平台移动端和桌面端收银应用（Android、Windows、Linux），
+          支持分单结账和蓝牙（ESC/POS）二维码小票打印。
+    \item \hl{取代纸质账本，积累 30 名会员}：实现交班结算、销售统计和会员积分计划，数据存于可导出 Excel 的本地 SQLite。
+    \item \hl{每次发布零手动步骤}：用 GitHub Actions 自动编译并签名 Windows 版本。
+  \end{itemize}}
+
+  \mainsection{重点技术项目}
+  \tl{\project{单周期 RISC-V（RV32I）处理器}{VHDL、Xilinx ISE 14.7、Spartan-3E FPGA}{EstebanSantiag0/RISC-VCPU}
+  {从零设计的 CPU，可执行 RV32I 的子集（算术、逻辑、加载/存储和条件跳转）：32 位 ALU、32 个寄存器的寄存器堆、控制单元、存储器以及下一条指令 PC 逻辑。}}
+  \tl{\project{桌面端学校管理系统（CRUD）}{Python、PyQt6、PostgreSQL、Docker Compose、Matplotlib}{EstebanSantiag0/CRUD}
+  {在 Docker 中基于 PostgreSQL 管理学生、课程和专业，并用饼图和柱状图展示统计数据。}}
+  \tl{\project{图灵机模拟器}{Python、PyQt6、PyInstaller · 团队合作}{Utemitas/DefinedTuringMachinesSimulator}
+  {逐步模拟两台图灵机，以 Windows 可执行文件发布。8 人团队，在我管理的 GitHub 组织 Utemitas 中完成。}}
+  \tl*{\project{FPGA 数字设计实验}{VHDL、Xilinx ISE 14.7 原理图、Digilent Nexys 2}{EstebanSantiag0}
+  {五个文档完整的设计：移位寄存器、0000–9999 计数器、文字跑马灯、七段数码管动态扫描和 PWM。}}
+
+  \mainsection{其他经历}
+  \tl{\role{建筑 3D 建模}{2025 年 1 月 – 至今}{与一位建筑师合作}
+  {\small \hl{交付 5 个项目，合作范围扩展}至效果图渲染和社交媒体运营（2026 年 2 月起），用 Blender 为其方案展示建模。}}
+  \tl*{\role{El Golpe 冰棍店分店}{2026 年夏}{自营生意}
+  {\small \hl{2026 年世界杯期间售出 350 支冰棍和 20 升冰淇淋}：开设分店，招聘并协调 \hl{4 名员工}，负责库存、收银和工资发放。}}
+\end{cvmain}
+
+\cvcontact{estebansantiag0.github.io/curriculum}{https://estebansantiag0.github.io/curriculum/?lang=zh}
+
+\mbox{}
+\end{document}
