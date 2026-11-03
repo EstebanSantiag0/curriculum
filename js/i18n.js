@@ -100,7 +100,7 @@
       'o2.date': '(summer 2026)',
       'o2.desc': ': ' + b('350 popsicles and 20 liters of ice cream sold') + ' during the 2026 World Cup, by opening the branch and hiring and coordinating ' + b('4 employees') + ', in charge of inventory, cash and payroll.',
 
-      'edu1.date': '2024 – present · 5th semester · GPA 9.0/10',
+      'edu1.date': '2024 – Jul. 2029 (expected) · 5th semester · GPA 9.0/10',
       'edu1.title': 'Computer Engineering',
       'edu1.school': 'Universidad Tecnológica de la Mixteca (UTM), Huajuapan de León',
       'edu1.subjects': 'Relevant coursework: Computer Architecture, Data Structures, Compilers, Operating Systems, Databases and Object-Oriented Programming',
@@ -198,7 +198,7 @@
       'o2.date': '（2026 年夏）',
       'o2.desc': '：' + b('2026 年世界杯期间售出 350 支冰棍和 20 升冰淇淋') + '，开设分店，招聘并协调 ' + b('4 名员工') + '，负责库存、收银和工资发放。',
 
-      'edu1.date': '2024 – 至今 · 第 5 学期 · 平均成绩 9.0/10',
+      'edu1.date': '2024 – 2029 年 7 月（预计）· 第 5 学期 · 平均成绩 9.0/10',
       'edu1.title': '计算机工程',
       'edu1.school': '米斯特卡科技大学（UTM），瓦华潘德莱昂',
       'edu1.subjects': '相关课程：计算机体系结构、数据结构、编译原理、操作系统、数据库和面向对象编程',
